@@ -34,13 +34,14 @@ export class App extends Component {
       return contact.name === name;
    });
     
-    if (isExist) return alert(`${name} is already in contacts.`);
+    if (isExist) {
+      return alert(`${name} is already in contacts.`);
+    }
 
     this.setState(prevState => ({
       contacts: [...prevState.contacts, {name, id: nanoid(), number}]
     }));
 
-    this.setState({ name: '', number: '' });
   };
 
 

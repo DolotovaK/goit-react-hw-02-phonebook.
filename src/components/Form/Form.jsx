@@ -21,17 +21,15 @@ export class Form extends Component{
     handleSubmitAddContact = evt => {
         evt.preventDefault()
         // console.log(this.state)
-        const {name, number} = evt.target.elements
+      const { name, number } = evt.target.elements;
 
-        this.props.onSubmit(name.value, number.value)
-        name.value = '';
-        number.value = '';
-        // this.resetForm()
+      this.props.onSubmit(name.value, number.value);
+      this.resetForm();
     };
 
-    // resetForm = () => {
-    //     this.setState({ name: '', number: '' })
-    // };
+    resetForm = () => {
+      this.setState({ name: '', number: '' });
+    };
 
     render() {
         return ( 
